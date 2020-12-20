@@ -24,13 +24,13 @@
                   state: absent
           when: existe_path_media_install_dest.stat.exists
 
-          name: Validar si existe la carpeta '{{ path_media_install_dir }}' donde se va a colocar la carpeta del instalador
+          name: Validar si existe la carpeta ## '{{ path_media_install_dir }}'
           stat:
                   path: '{{ path_media_install_dir }}'
           register: existe_path_media_install_dir
 
 
-          name: Crear carpeta '{{ path_media_install_dir }}' para depositar la carpeta del instalable
+          name: Crear carpeta ## '{{ path_media_install_dir }}' para depositar la carpeta del instalable
           file:
                   path: '{{ path_media_install_dir }}'
                   state: directory
