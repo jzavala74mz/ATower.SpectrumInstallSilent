@@ -1,7 +1,7 @@
 ---
   ## Instalación de Spectrum 10.3 en Linux Red Hat 8/CentOS 8
   ## Autor: Jorge Zavala Navarr
-- name: INSTALAR SPECTRUM 10_3 EN LINUX RED HAT 8.0/CENTOS 8_0
+- name: 'INSTALAR SPECTRUM 10_3 EN LINUX RED HAT 8.0/CENTOS 8_0'
   hosts: all
 
   vars:
