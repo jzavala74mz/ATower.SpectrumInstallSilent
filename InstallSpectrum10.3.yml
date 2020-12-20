@@ -13,32 +13,32 @@
           path_media_install_dir: /home/Spectrum
 
   tasks:
-          name: Validar si existe la carpeta con la media de instalación para spectrum
-          stat:
+          - name: Validar si existe la carpeta con la media de instalación para spectrum
+            stat:
                   path: '{{ path_media_install_dest }}'
-          register: existe_path_media_install_dest
+            register: existe_path_media_install_dest
 
-          name: Borrar la actual carpeta de la media de instalación en caso de existir
-          file:
+          - name: Borrar la actual carpeta de la media de instalación en caso de existir
+            file:
                   path: '{{ path_media_install_dest }}'
                   state: absent
-          when: existe_path_media_install_dest.stat.exists
-
-          name: Validar si existe la carpeta ## '{{ path_media_install_dir }}'
-          stat:
+            when: existe_path_media_install_dest.stat.exists
+           
+          - name: Validar si existe la carpeta ## '{{ path_media_install_dir }}'
+            stat:
                   path: '{{ path_media_install_dir }}'
-          register: existe_path_media_install_dir
+            register: existe_path_media_install_dir
 
 
-          name: Crear carpeta ## '{{ path_media_install_dir }}' para depositar la carpeta del instalable
-          file:
+          - name: Crear carpeta ## '{{ path_media_install_dir }}' para depositar la carpeta del instalable
+            file:
                   path: '{{ path_media_install_dir }}'
                   state: directory
                   mode: '0755'
-          when: existe_path_media_install_dir.stat.exists == False
+            when: existe_path_media_install_dir.stat.exists == False
 
-          name: Copiar la media de instalación
-          copy:
+          - name: Copiar la media de instalación
+            copy:
                   src: '{{ path_media_install_src }}'
                   dest: '{{ path_media_install_dest }}'
                   remote_src: no
