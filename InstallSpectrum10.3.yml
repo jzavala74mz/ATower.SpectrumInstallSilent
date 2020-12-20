@@ -7,6 +7,7 @@
 
   vars:
           repo_tag: spestrum_10_3
+
           vars:
           path_media_install_src: /root/Spectrum/Install_Spectrum_10_3_linux
           path_media_install_dest: /home/Spectrum/Install_Spectrum_10_3_linux
