@@ -36,7 +36,7 @@
                   path: '{{ path_media_install_dir }}'
                   state: directory
                   mode: '0755'
-          when: 'not {{ existe_path_media_install_dir.stat.exists }}' 
+          when: existe_path_media_install_dir.stat.exists == False
 
           name: Copiar la media de instalación
           copy:
