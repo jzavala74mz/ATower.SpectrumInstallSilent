@@ -41,7 +41,7 @@
             copy:
                   src: '{{ path_media_install_src }}'
                   dest: '{{ path_media_install_dir }}'
-                  remote_src: yes
+                  remote_src: no
                   owner: root
                   backup: no
 
