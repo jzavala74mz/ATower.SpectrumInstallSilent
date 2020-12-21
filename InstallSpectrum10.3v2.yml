@@ -8,7 +8,7 @@
           repo_tag: spestrum_10_3
 
           vars:
-          path_media_install_src: /root/Spectrum/Install_Spectrum_10_3_linux
+          path_media_install_src: /root/Spectrum/Install_Spectrum_10_3_linux/
           path_media_install_dest: /home/Spectrum/Install_Spectrum_10_3_linux
           path_media_install_dir: /home/Spectrum
 
@@ -40,7 +40,7 @@
           - name: Copiar la media de instalación
             copy:
                   src: '{{ path_media_install_src }}'
-                  dest: '{{ path_media_install_dest }}'
+                  dest: '{{ path_media_install_dir }}'
                   remote_src: yes
                   owner: root
                   backup: no
